@@ -1,113 +1,292 @@
-import Image from 'next/image'
+"use client";
+import Image from "next/image";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { FaBell } from "react-icons/fa";
+import { FaAward } from "react-icons/fa6";
+import { AiFillGift } from "react-icons/ai";
+import { BiSolidBookAlt } from "react-icons/bi";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Link from "next/link";
 
-export default function Home() {
+export default function Dashboard() {
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init({
+      once: true, // Specify whether animation should happen only once
+    });
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="w-full min-h-screen bg-white font-poppins">
+      <Navbar />
+      <section id="banner">
+        <div
+          className="container-fluid relative overflow-hidden bg-cover bg-center bg-purple-light-100"
+          style={{ backgroundImage: 'url("/background1.png")' }}
+        >
+          <div className="max-w-screen-xl mx-auto min-h-[550px] sm:min-h-[500px] md:min-h-[637px] flex lg:flex items-center relative px-9 pt-28 pb-14 md:px-9 md:pt-24 md:pb-14 lg:px-9 lg:pt-5 lg:pb-14">
+            <div className="sm:w-full lg:w-1/2 z-20">
+              <h1 className="text-2xl sm:text-4xl text-slate-700 font-bold mb-3 leading-[50px]" data-aos="fade-up">
+                Tingkatkan Kemampuan Literasimu Bersama <span className="text-purple-semi-dark">Taleify</span>
+              </h1>
+              <p className="text-[14px] sm:text-base text-slate-500 leading-loose" data-aos="fade-up">
+                Tempat dimana petualangan tak terbatas dan dunia imajinasi terbuka lebar! Temukan keajaiban literasi
+                membaca dengan cerita seru hanya di <span className="text-purple-semi-dark font-bold">Taleify</span>!
+              </p>
+              <div className="flex mt-12" data-aos="fade-up">
+                <Image
+                  src={"/facebook.png"}
+                  alt="facebook"
+                  width={500}
+                  height={500}
+                  className="h-7 drop-shadow-lg w-auto cursor-pointer me-7"
+                />
+                <Image
+                  src={"/instagram-logo.png"}
+                  alt="facebook"
+                  width={500}
+                  height={500}
+                  className="h-7 drop-shadow-lg w-auto cursor-pointer me-7"
+                />
+                <Image
+                  src={"/youtube.png"}
+                  alt="facebook"
+                  width={500}
+                  height={500}
+                  className="h-7 drop-shadow-lg w-auto cursor-pointer"
+                />
+              </div>
+            </div>
+            <div className="hidden lg:block w-1/2 px-2">
+              <Image
+                src={"/woman1.png"}
+                width={500}
+                height={500}
+                quality={100}
+                alt="woman"
+                className="lg:absolute relative h-auto lg:h-[600px] w-auto bottom-0 right-1/2 translate-x-1/2 lg:right-1/3 lg:translate-x-2/3"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+      <section id="about">
+        <div
+          className="container-fluid bg-gradient-to-b from-white to-purple-light-50 overflow-hidden bg-cover bg-center relative"
+          style={{ backgroundImage: 'url("/background2.png")' }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="max-w-screen-xl px-9 py-14 lg:px-9 lg:py-5 md:flex-row bg-cover relative min-h-0 lg:min-h-[593px] mx-auto flex flex-col lg:flex-row items-center">
+            <div className="w-full lg:w-1/2">
+              <Image
+                src={"/woman-confuse.png"}
+                alt="woman-confuse.png"
+                quality={100}
+                width={500}
+                height={1000}
+                className="mb-8 md:mb-0 lg:absolute relative h-auto lg:h-[524px] w-auto bottom-0 left-1/2 -translate-x-1/2 lg:left-1/3 lg:-translate-x-2/3"
+              />
+            </div>
+            <div className="w-full lg:w-1/2 z-20">
+              <h1 className="text-2xl sm:text-4xl font-bold text-slate-700" data-aos="fade-left">
+                Kenapa Harus Kami?
+              </h1>
+              <p className="text-slate-500 text-justify mt-4 mb-5 text-[14px] sm:text-base" data-aos="fade-left">
+                Literasi merupakan sebuah kemampuan yang harus diasah sejak usia muda.{" "}
+                <span className="text-purple-semi-dark font-bold">Taleify</span> merupakan sebuah aplikasi yang ikut
+                berkontribusi dalam upaya meningkatkan kemampuan membaca dengan fitur-fitur yang menarik
+              </p>
+              <a href="" className="bg-purple-dark px-4 py-2 rounded-md hover:bg-purple-semi-dark" data-aos="fade-left">
+                Join Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="feature" className="bg-gradient-to-b from-white to-purple-light-50">
+        <div
+          className="container-fluid rounded-b-md md:rounded-b-lg lg:rounded-b-[150px] overflow-hidden bg-cover bg-center relative"
+          style={{ backgroundImage: 'url("/background3.png")' }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+          <div className="max-w-screen-xl min-h-0 lg:min-h-[751px] mx-auto flex flex-col lg:flex-row items-center px-9 py-14 lg:px-9 lg:py-5">
+            <div className="w-full lg:w-1/2">
+              <h1 className="text-2xl sm:text-4xl font-bold text-slate-700" data-aos="fade-right">
+                Apa Yang Kami Tawarkan?
+              </h1>
+              <p className="text-slate-500 text-justify mt-4 text-[14px] sm:text-base" data-aos="fade-right">
+                Untuk menunjang kemampuan literasi, kami menawarkan beberapa fitur yang disediakan pada aplikasi
+                <span className="text-purple-semi-dark font-bold"> Taleify</span>
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-9 mt-16">
+                <div className="min-h-0 sm:min-h-[171px] bg-white border-[1px] border-purple-light rounded-xl relative pt-9 px-5 pb-5 group hover:bg-purple-light cursor-default transition ease-in-out duration-150">
+                  <div className="h-[44px] w-[44px] bg-purple-light rounded-lg absolute left-5 -top-5 p-2 group-hover:bg-white border-0 group-hover:border-[1px] border-purple-light transition ease-in-out duration-150">
+                    <FaAward className="w-full h-auto text-white group-hover:text-purple-light transition ease-in-out duration-150" />
+                  </div>
+                  <h4 className="text-base text-justify text-slate-700 font-bold mb-2 group-hover:text-white transition ease-in-out duration-150">
+                    Poin Literasi
+                  </h4>
+                  <h4 className="text-[14px] sm:text-base text-slate-500 group-hover:text-white transition ease-in-out duration-150">
+                    Fitur poin yang dapat kamu kumpulkan dengan menyelesaikan literasi & kuis
+                  </h4>
+                </div>
+                <div className="min-h-0 sm:min-h-[171px] bg-white border-[1px] border-purple-light rounded-xl relative pt-9 px-5 pb-5 group hover:bg-purple-light cursor-default transition ease-in-out duration-150">
+                  <div className="h-[44px] w-[44px] bg-purple-light rounded-lg absolute left-5 -top-5 p-2 group-hover:bg-white border-0 group-hover:border-[1px] border-purple-light transition ease-in-out duration-150">
+                    <AiFillGift className="w-full h-auto text-white group-hover:text-purple-light transition ease-in-out duration-150" />
+                  </div>
+                  <h4 className="text-base text-justify text-slate-700 font-bold mb-2 group-hover:text-white transition ease-in-out duration-150">
+                    Reward
+                  </h4>
+                  <h4 className="text-[14px] sm:text-base text-slate-500 group-hover:text-white transition ease-in-out duration-150">
+                    Penukaran poin literasi untuk mendapatkan beberapa reward yang disediakan
+                  </h4>
+                </div>
+                <div className="min-h-0 sm:min-h-[171px] bg-white border-[1px] border-purple-light rounded-xl relative pt-9 px-5 pb-5 group hover:bg-purple-light cursor-default transition ease-in-out duration-150">
+                  <div className="h-[44px] w-[44px] bg-purple-light rounded-lg absolute left-5 -top-5 p-2 group-hover:bg-white border-0 group-hover:border-[1px] border-purple-light transition ease-in-out duration-150">
+                    <FaBell className="w-full h-auto text-white group-hover:text-purple-light transition ease-in-out duration-150" />
+                  </div>
+                  <h4 className="text-base text-justify text-slate-700 font-bold mb-2 group-hover:text-white transition ease-in-out duration-150">
+                    Notifikasi
+                  </h4>
+                  <h4 className="text-[14px] sm:text-base text-slate-500 group-hover:text-white transition ease-in-out duration-150">
+                    Notifikasi tentang literasi terkini yang mungkin kamu sukai
+                  </h4>
+                </div>
+                <div className="min-h-0 sm:min-h-[171px] bg-white border-[1px] border-purple-light rounded-xl relative pt-9 px-5 pb-5 group hover:bg-purple-light cursor-default transition ease-in-out duration-150">
+                  <div className="h-[44px] w-[44px] bg-purple-light rounded-lg absolute left-5 -top-5 p-2 group-hover:bg-white border-0 group-hover:border-[1px] border-purple-light transition ease-in-out duration-150">
+                    <BiSolidBookAlt className="w-full h-auto text-white group-hover:text-purple-light transition ease-in-out duration-150" />
+                  </div>
+                  <h4 className="text-base text-justify text-slate-700 font-bold mb-2 group-hover:text-white transition ease-in-out duration-150">
+                    Kumpulan Literasi
+                  </h4>
+                  <h4 className="text-[14px] sm:text-base text-slate-500 group-hover:text-white transition ease-in-out duration-150">
+                    Berbagai macam bacaan literasi yang menarik dan seru
+                  </h4>
+                </div>
+              </div>
+            </div>
+            <div className="hidden md:block md:w-1/2">
+              <Image
+                src={"/woman3.png"}
+                width={500}
+                height={500}
+                alt="woman"
+                className="lg:absolute relative h-auto lg:h-[672px] w-auto bottom-0 right-1/2 translate-x-1/2 lg:right-1/3 lg:translate-x-2/3"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="article" className="bg-gradient-to-b from-white to-purple-light-50">
+        <div
+          className="container-fluid overflow-hidden bg-cover bg-center"
+          style={{ backgroundImage: 'url("/background4.png")' }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <div className="max-w-screen-xl min-h-[751px] mx-auto px-9 py-14 lg:px-9 lg:py-5 flex items-center justify-center flex-col">
+            <div className="w-full flex flex-col lg:flex-row items-start lg:items-end  lg:justify-between">
+              <div className="w-full lg:w-1/2">
+                <h1 className="text-2xl sm:text-4xl font-bold text-slate-700" data-aos="fade-right">
+                  Artikel Kami
+                </h1>
+                <p className="text-slate-500 text-justify mt-4 text-[14px] sm:text-base" data-aos="fade-right">
+                  <span className="text-purple-semi-dark font-bold">Taleify</span> menyediakan beberapa artikel yang
+                  dapat digunakan sebagai sumber pengetahuan tertkait literasi
+                </p>
+              </div>
+              <button
+                className="hidden lg:block bg-white border-2 border-purple-light rounded-md px-4 py-2 text-purple-light hover:bg-purple-semi-dark hover:text-white mt-6 lg:mt-0"
+                data-aos="fade-left"
+              >
+                Lihat Semua Artikel
+              </button>
+            </div>
+            <div className="w-full mt-11">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-9 lg:gap-9 mx-0 lg:mx-6">
+                <div
+                  className="min-h-0 md:min-h-[482px] bg-white text-slate-700 shadow-sm border-2 border-slate-100 rounded-2xl flex flex-col items-center p-5"
+                  data-aos="zoom-in"
+                >
+                  <div className="w-full h-[208px] bg-purple-light-200 rounded-2xl overflow-hidden flex items-center justify-center">
+                    <Image
+                      src={"/literation.jpg"}
+                      alt="image"
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <h4 className="text-slate-700 font-bold mt-5">Pentingkah Kemampuan Literasi Membaca?</h4>
+                  <p className="text-slate-500 text-sm text-justify leading-relaxed mt-4">
+                    Kemampuan literasi membaca sangat penting, terutama dikalangan anak muda yang saat ini memiliki
+                    tergantungan dengan gadget
+                  </p>
+                  <Link
+                    href={"/artikel"}
+                    className="text-center bg-white border-2 border-purple-light px-4 py-2 rounded-md text-purple-light w-full mt-5 hover:bg-purple-semi-dark hover:text-white"
+                  >
+                    Baca Selengkapnya
+                  </Link>
+                </div>
+                <div
+                  className="min-h-0 md:min-h-[482px] bg-white text-slate-700 shadow-sm border-2 border-slate-100 rounded-2xl flex flex-col items-center p-5"
+                  data-aos="zoom-in"
+                >
+                  <div className="w-full h-[208px] bg-purple-light-200 rounded-2xl overflow-hidden flex items-center justify-center">
+                    <Image
+                      src={"/idea.jpg"}
+                      alt="image"
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <h4 className="text-slate-700 font-bold mt-5">Pentingkah Kemampuan Literasi Membaca?</h4>
+                  <p className="text-slate-500 text-sm text-justify leading-relaxed mt-4">
+                    Kemampuan literasi membaca sangat penting, terutama dikalangan anak muda yang saat ini memiliki
+                    tergantungan dengan gadget
+                  </p>
+                  <Link
+                    href={"/artikel"}
+                    className="text-center bg-white border-2 border-purple-light px-4 py-2 rounded-md text-purple-light w-full mt-5 hover:bg-purple-semi-dark hover:text-white"
+                  >
+                    Baca Selengkapnya
+                  </Link>
+                </div>
+                <div
+                  className="min-h-0 md:min-h-[482px] bg-white text-slate-700 shadow-sm border-2 border-slate-100 rounded-2xl flex flex-col items-center p-5"
+                  data-aos="zoom-in"
+                >
+                  <div className="w-full h-[208px] bg-purple-light-200 rounded-2xl overflow-hidden flex items-center justify-center">
+                    <Image
+                      src={"/happy.jpg"}
+                      alt="image"
+                      width={500}
+                      height={500}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                  <h4 className="text-slate-700 font-bold mt-5">Pentingkah Kemampuan Literasi Membaca?</h4>
+                  <p className="text-slate-500 text-sm text-justify leading-relaxed mt-4">
+                    Kemampuan literasi membaca sangat penting, terutama dikalangan anak muda yang saat ini memiliki
+                    tergantungan dengan gadget
+                  </p>
+                  <Link
+                    href={"/artikel"}
+                    className="text-center bg-white border-2 border-purple-light px-4 py-2 rounded-md text-purple-light w-full mt-5 hover:bg-purple-semi-dark hover:text-white"
+                  >
+                    Baca Selengkapnya
+                  </Link>
+                </div>
+              </div>
+              <button className="block lg:hidden w-full bg-purple-light border-2 border-purple-light rounded-md px-4 py-2 text-white hover:bg-purple-semi-dark hover:text-white mt-6 lg:mt-0">
+                Lihat Semua Artikel
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </main>
-  )
+  );
 }
