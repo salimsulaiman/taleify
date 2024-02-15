@@ -25,15 +25,14 @@ export default function Article() {
         <div className="container-fluid bg-cover bg-center" style={{ backgroundImage: 'url("/background5.png")' }}>
           <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 px-9 pt-28 pb-14 md:px-9 md:pt-24 md:pb-14 lg:px-9 lg:pt-32 lg:pb-14">
             <div className="col-span-1 lg:col-span-2" id="artikel">
-              <div className="w-full h-[200px] md:h-[392px] lg:h-[392px] rounded-xl overflow-hidden">
+              <div className="w-full h-[200px] md:h-[392px] lg:h-[392px] rounded-xl overflow-hidden relative">
                 <Image
                   src={"/literation.jpg"}
-                  className="w-full h-full object-cover object-center"
                   alt="literation.jpg"
-                  loading="lazy"
-                  width={500}
-                  height={500}
                   quality={100}
+                  layout="fill"
+                  objectFit="cover"
+                  className="object-center"
                 />
               </div>
               <h1 className="text-xl md:text-4xl lg:text-4xl text-slate-700 font-bold leading-relaxed my-5">

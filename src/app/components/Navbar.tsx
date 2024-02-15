@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 // components/Navbar.js
 import { useState, useEffect } from "react";
 
@@ -8,6 +9,7 @@ const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const [scrolling, setScrolling] = useState(false);
+  const route = useRouter();
 
   const toggleNavbar = () => {
     setIsExpanded(!isExpanded);
@@ -27,6 +29,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const signin = () => {
+    route.push("/user/login");
+  };
 
   return (
     <nav
@@ -55,7 +61,9 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="ms-10">
-            <button className="bg-purple-dark hover:bg-purple-semi-dark rounded-md px-4 py-2">Sign in</button>
+            <button className="bg-purple-dark hover:bg-purple-semi-dark rounded-md px-4 py-2" onClick={signin}>
+              Sign in
+            </button>
           </li>
         </ul>
         <button

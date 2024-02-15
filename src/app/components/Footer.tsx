@@ -56,20 +56,20 @@ function Footer() {
           <ul className="col-span-3 md:col-span-2 text-center md:text-start flex justify-center">
             <div>
               <li className="text-purple-semi-dark font-bold mb-4">Kontak</li>
-              <li className="mb-2 text-slate-500 flex items-center">
-                <span>
+              <li className="mb-2 text-slate-500 flex items-center justify-center md:justify-start">
+                <span className="hidden sm:block">
                   <EnvelopeIcon className="w-6 inline me-2" />
                 </span>
                 taleify@gmail.com
               </li>
-              <li className="mb-2 text-slate-500 flex items-center">
-                <span>
+              <li className="mb-2 text-slate-500 flex items-center justify-center md:justify-start">
+                <span className="hidden sm:block">
                   <PhoneIcon className="w-6 inline me-2" />
                 </span>
                 0877-7788-7878
               </li>
-              <li className="mb-2 text-slate-500 flex items-center">
-                <span>
+              <li className="mb-2 text-slate-500 flex items-center justify-center md:justify-start">
+                <span className="hidden sm:block">
                   <MapPinIcon className="w-6 inline me-2" />
                 </span>
                 Semarang, Jalan Imam Bonjol, Indonesia

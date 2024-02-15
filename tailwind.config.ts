@@ -21,12 +21,16 @@ const config: Config = {
         "purple-light-100": "#EFEEFF",
         "purple-light-200": "#E6E5FF",
         "purple-light-300": "#C9C8F1",
+        "purple-light-400": "#D0CFFF",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
+  },
 };
 export default config;
